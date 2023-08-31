@@ -1,0 +1,33 @@
+{
+  "name": "artmin96/omnipay-telcell",
+  "type": "library",
+  "description": "TelCell gateway for Omnipay payment processing library",
+  "keywords": [
+    "gateway",
+    "merchant",
+    "omnipay",
+    "pay",
+    "payment",
+    "telcell",
+    "purchase"
+  ],
+  "homepage": "https://github.com/razmiksaghoyan/omnipay-telcell",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Razmik Saghoyan",
+      "email": "razmiksaghoyan@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Omnipay\\Telcell\\": "src/"
+    }
+  },
+  "require": {
+    "omnipay/common": "^3"
+  },
+  "require-dev": {
+    "omnipay/tests": "^3"
+  }
+}
