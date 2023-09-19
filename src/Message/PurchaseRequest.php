@@ -219,6 +219,16 @@ class PurchaseRequest extends AbstractRequest
         return $this->getParameter('product');
     }
 
+    public function setLang($value)
+    {
+        return $this->setParameter('lang', $value);
+    }
+
+    public function getLang()
+    {
+        return $this->getParameter('lang');
+    }
+
     /**
      * Set custom data to get back as is
      *
@@ -246,7 +256,7 @@ class PurchaseRequest extends AbstractRequest
      */
     public function getData()
     {
-        $this->validate('shopId', 'shopKey', 'bill:issuer', 'sum', 'issuer_id', 'valid_days', 'security_code', 'product');
+        $this->validate('shopId', 'shopKey', 'bill:issuer', 'sum', 'issuer_id', 'valid_days', 'security_code', 'product', 'lang');
 
         return [
             'action'        => 'PostInvoice',
@@ -256,7 +266,7 @@ class PurchaseRequest extends AbstractRequest
             'product'       => $this->getProduct(),
             'issuer_id'     => $this->getTransactionId(),
             'valid_days'    => $this->getValidDays(),
-            'lang'          => 'hy',
+            'lang'          => $this->getLang(),
             'security_code' => $this->getSecurityCode(),
         ];
     }
